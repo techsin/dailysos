@@ -1,0 +1,65 @@
+{
+  "name": "dailysos",
+  "version": "1.0.0",
+  "description": "information diet made easy",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon -L app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/techsin/dailysos.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/techsin/dailysos/issues"
+  },
+  "homepage": "https://github.com/techsin/dailysos#readme",
+  "dependencies": {
+    "aws-sdk": "^2.133.0",
+    "axios": "^0.16.2",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "debug": "^3.1.0",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
+    "handlebars": "^4.0.10",
+    "history": "^4.7.2",
+    "moment": "^2.19.1",
+    "morgan": "^1.9.0",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "pg": "^7.3.0",
+    "pg-hstore": "^2.3.2",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-ga": "^2.3.5",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "sequelize": "^4.13.9",
+    "serve-favicon": "^2.4.5"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-less": "^3.3.2",
+    "gulp-nodemon": "^2.2.1",
+    "less": "^3.0.0-alpha.3",
+    "nodemon": "^1.12.1",
+    "sequelize-cli": "^3.0.0",
+    "webpack": "^3.7.1",
+    "webpack-dev-middleware": "^1.12.0",
+    "webpack-hot-middleware": "^2.19.1"
+  }
+}
