@@ -28,13 +28,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //load Views
-const handlebars = require('express-handlebars');
-app.engine('handlebars', handlebars({
-    layoutsDir: './views/layouts',
-    defaultLayout: 'main',
-}));
-app.set('view engine', 'handlebars');
-app.set('views', `${__dirname}/views/`);
+app.set("view engine", "pug");
+app.set("views", path.join(__dirname, "views"));
 
 //load controllers (routes)
 const controllers = require('./controllers');
