@@ -34,3 +34,13 @@ It started as a project for CUNY tech prep. Seems to have become actually useful
 ## Bugs to be Fixed
 
 -- to be done --
+
+## Notes
+
+initdb /some/directory # just do this ONCE
+pg_ctl -D /some/directory start # many other options, e.g. logging, available here
+psql postgres
+host all postgres 127.0.0.1/32 trust
+
+pg_ctl -D \psql_data start
+createdb -h localhost -U techsin dailysos
