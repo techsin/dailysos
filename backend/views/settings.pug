@@ -1,0 +1,27 @@
+extends ./layouts/main.pug
+block body
+    body#settings
+        include partials/header.pug
+        .container
+            .section.bio
+                .left
+                    img(src="", alt="")
+                    .edit_btn Edit Photo
+                .right
+                    .name
+                        span.first Muhammad
+                        span.last Umer
+                    .desc
+                        | I am this and that, and so interested in books and thatI am this and that, and so interested in books and thatI am this and that, and so interested in books and thatI am this and that, and so interested in books and that.
+                    .sub_head Country
+                    .country United Kingdom
+                    .edit_btn Edit Bio
+            .section.noti
+                h3 Notifications Settings
+                .edit_btn.edit_only Edit Bio
+            .section.privacy
+                h3 Privacy Settings
+                .edit_btn.edit_only Edit Bio
+            .section.account
+                h3 Account Settings
+                .edit_btn.edit_only Edit Bio

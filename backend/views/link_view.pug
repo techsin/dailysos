@@ -1,0 +1,69 @@
+extends ./layouts/main.pug
+block body
+    body#link_view
+        include partials/header.pug
+        .container
+            a.link(href="#")
+                .total_score 2590
+                .title
+                    span.txt How to cook chicken soup
+                    |  | 
+                    span.url https://wikihow.com/how-to-cook-chicken-soup…
+                .reach
+                    span.num 30
+                    | % Reach
+                .score 58
+            .stats
+                .tabs
+                    .tab.selected
+                        span.num 34
+                        span.txt Upvotes
+                    .tab
+                        span.num 388
+                        span.txt Reached
+                    .tab
+                        span.num 8
+                        span.txt Other Posters
+                .people
+                    a.person(target="_blank", href="#")
+                        img(src="#", alt="")
+                        span.first Suricoke
+                        span.last Noeov
+                    a.person(target="_blank", href="#")
+                        img(src="#", alt="")
+                        span.first Suricoke
+                        span.last Noeov
+                    a.person(target="_blank", href="#")
+                        img(src="#", alt="")
+                        span.first Suricoke
+                        span.last Noeov
+                    a.person(target="_blank", href="#")
+                        img(src="#", alt="")
+                        span.first Suricoke
+                        span.last Noeov
+                    a.person(target="_blank", href="#")
+                        img(src="#", alt="")
+                        span.first Suricoke
+                        span.last Noeov
+                    a.person(target="_blank", href="#")
+                        img(src="#", alt="")
+                        span.first Suricoke
+                        span.last Noeov
+                    a.person(target="_blank", href="#")
+                        img(src="#", alt="")
+                        span.first Suricoke
+                        span.last Noeov
+                    a.person(target="_blank", href="#")
+                        img(src="#", alt="")
+                        span.first Suricoke
+                        span.last Noeov
+                    a.person(target="_blank", href="#")
+                        img(src="#", alt="")
+                        span.first Suricoke
+                        span.last Noeov
+                    a.person(target="_blank", href="#")
+                        img(src="#", alt="")
+                        span.first Suricoke
+                        span.last Noeov
+            form(action="#")
+                input.delete_btn(type="submit", value="Delete")

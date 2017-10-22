@@ -1,0 +1,110 @@
+
+.container {
+    max-width: 831px;
+    margin: auto;
+    margin-top: 50px;
+    padding-bottom: 100px;
+  
+    .link {
+      margin-bottom: 20px;
+      font-size: 15px;
+      background-color: #fff;
+      padding: 25px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      border: 1px solid #D3D3D3;
+      box-sizing: border-box;
+      .total_score {
+        color: #f7790d;
+        font-weight: 600;
+        margin-right: 16px;
+      }
+      .title {
+        .txt {
+          color: #333;
+        }
+        .url {
+          color: #afafaf;
+        }
+      }
+      .reach {
+        color: #484ed5;
+        margin-left: auto;
+        margin-right: 15px;
+      }
+      .score {
+        background-color: #484ed5;
+        border-radius: 4px;
+        padding: 5px 16px;
+        color: #fff;
+        box-sizing: border-box;
+      }
+    }
+    
+    .tabs {
+      display: flex;
+      background-color: #9798B4;
+      .tab {
+        padding: 14px 19px;
+        color: #fff;
+        font-size: 15px;
+        font-weight: 100;
+        cursor: pointer;
+        user-select: none;
+        &.selected {
+          color: #000;
+          background-color: #fff;
+          font-weight: 800;
+        }
+        &:not(.selected):hover {
+          background-color: lighten(#9798B4,10%);
+        }
+      }
+    }
+    .people {
+        padding: 20px 10px;
+        box-sizing: border-box;
+        background-color: #fff;
+      display: flex;
+      flex-wrap: wrap;
+      .person {
+        border: 1px solid #eee;
+        border-radius: 4px;
+        text-decoration: none;
+        color: #333;
+        display: flex;
+        align-items: center;
+        min-width: 172px;
+        margin: 8px;
+        padding: 10px;
+        flex:1;
+        box-sizing: border-box;
+        img {
+          height: 31px;
+          width: 31px;
+          background-color: #ddd;
+          border-radius: 100%;
+          margin-right: 10px;
+        }
+        .first {
+          margin-right: 5px;
+        }
+      }
+    }
+    
+    .delete_btn {
+      cursor: pointer;
+      border-radius: 4px;
+      padding: 10px 29px;
+      font-size: 15px;
+      color: #fff;
+      background-color: #E24141;
+      outline: none;
+      border: none;
+      font-weight: 100;
+      margin-top: 18px;
+    }
+  }
+  

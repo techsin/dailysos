@@ -1,0 +1,53 @@
+extends ./layouts/main.pug
+block style
+  link(rel="stylesheet", href="css/homepage.css")
+block body
+  body
+    header
+      .logo
+        | DAILYSOS
+      .nav
+        a(href="/login") Login
+        a(href="/register") Register
+    .hero_sect
+      .content
+        .tag
+          | YOUR INFORMATION DIET BUDDY!
+        .box
+          .left
+            .tag_line GET ONLY THE BEST
+            h1 Daily Email With Only Content You Need
+            p
+              | Information overload is a real problem and you’ve got only so many hours in a day. Why not spend them at best content. DailySOS allows you to prioritize, limit and select source of your content.
+            a.blue_btn(href="/register") TRY IT
+            a.white_btn(href="#") SEE VIDEO
+          .right
+            .text.seventy Emails (54)
+            .text.eighty Youtube Feed (32)
+            .text.ninety Tweets (24)
+            .text Newsletters (21)
+            .text.ninety Facebook Timeline (21)
+            .text.eighty Reddit Posts (28)
+            .text.seventy Quora Questions (16)
+            .text.sixty Yahoo News (19)
+            .text.fifty Google Assistant (14)
+            .text.forty Slack Messages (7)
+    .features
+      .content
+        h2 Assign Importance to Your Sources
+        p.desc
+          | Our algorithim takes into account importance you have assigned to every person you are following. So people who you care about what they have to say are given front seat to your daily email.
+        img.importance(src="https://image.ibb.co/m1Pf6G/group.png", alt="importance feature")
+        h2 Become Authority to Your Followers
+        p.desc
+          | Email is still the best way to get message to people with DAILYSOS you can reach your loyal followers non-intrusively. It’s a best way to gain trust and get your name out there.
+        .nintyk 90,000 followers
+    .ready_start
+      .content
+        h2 Ready to get started?
+        a.btn(href="/register") Let's Go
+    .footer
+      a(href="#") FAQs
+      a(href="#") About Us
+      a(href="#") Privacy and Terms
+      a(href="#") Contact Us

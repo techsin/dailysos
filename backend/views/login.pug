@@ -1,0 +1,23 @@
+extends ./layouts/main.pug
+block style
+  link(rel="stylesheet", href="css/homepage.css")
+block body
+  body#login
+    .hero_sect
+        a.logo(href="/") DAILYSOS
+        .content
+            form(action="/login" method="POST")
+                input(type="email" placeholder='Email' name='email')
+                input(type="password" placeholder='Password' name='password')
+                input(type="submit" value="Sign In")
+            a.btn-register(href="/register") Register
+            a.forgot-pswd(href='/forgot_password') Forgot Password?
+
+            .social-login
+                h3 Quickly Login with these instead
+                .btns
+                    a.btn.fb(href="#") Facebook
+                    a.btn.google(href="#") Google
+                    a.btn.reddit(href="#") Reddit
+                    a.btn.github(href="#") Github
+                

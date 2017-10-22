@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Robot, sans-serif;
+    background-color: #F2F2F2;
+}
+
+.blue_btn {
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    background-color: #3e5fd2;
+    border-radius: 4px;
+    padding: 12px 30px;
+    text-align: center;
+    min-width: 108px;
+    font-size: 16px;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.blue_btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.16);
+}
+
+header {
+    background-color: rgba(62, 95, 210, 0.92);
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    font-family: Robot, sans-serif;
+}
+
+header .logo {
+    font-size: 25px;
+    color: #fff;
+    font-weight: 300;
+    margin-right: 41px;
+    text-decoration: none;
+}
+
+header input.search {
+    border-radius: 4px;
+    border: 1px solid #2B32D0;
+    font-size: 15px;
+    padding: 10px;
+    outline: none;
+    font-weight: 100;
+    flex-grow: 1;
+    max-width: 428px;
+}
+
+header input::-webkit-input-placeholder {
+    color: #aaa;
+}
+
+header .btns {
+    display: flex;
+    margin-left: auto;
+    justify-content: center;
+}
+
+header .btns a {
+    padding: 10px;
+    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 100;
+    display: inline-block;
+    border-radius: 4px;
+    margin: 0 5px;
+    &.selected,
+    &:hover {
+        background-color: #34389B;
+    }
+}
+
+#timeline {
+    @import "./pages/timeline.less";
+}
+
+#settings {
+    @import "./pages/settings.less";
+}
+
+#link_view {
+    @import "./pages/link_view.less";
+}
