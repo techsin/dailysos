@@ -1,0 +1,95 @@
+
+  
+  .fluid-container {
+    background-color: #F2F2F2;
+    min-height: 100vh;
+    .headers {
+      display: flex;
+      margin-bottom: 19px;
+      font-size: 20px;
+      display: flex;
+      width: 590px;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      font-weight: 100;
+      .imp {
+        position: absolute;
+        right: ~"calc( 100% + 18px)"; 
+        top: 46px;
+        font-weight: 800;
+        font-size: 15px;
+      }
+      .search {
+        padding: 13px 15px;
+        font-size: 15px;
+        border-radius: 4px;
+        border: 1px solid #A5A8AA;
+        width: 352px;
+        box-sizing: border-box;
+      }
+    }
+    .person {
+      position: relative;
+      background-color: #fff;
+      border-radius: 4px;
+      padding: 13px 16px;
+      box-sizing: border-box;
+      width: 590px;
+      display: flex;
+      align-items: center;
+      padding-right: 24px;
+      margin-bottom: 20px;
+      cursor: move;
+      a.imgLink {
+        line-height: 0;
+      }
+      img {
+        width: 56px;
+        height: 56px;
+        border-radius: 100%;
+        user-select: none;
+      }
+      .name {
+        font-size: 20px;
+      }
+      .followers {
+        color: #909090;
+        font-size: 12px;
+        font-weight: 100;
+      }
+      .info {
+        margin-left: 14px;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .importance_num {
+        position: absolute;
+        right: ~"calc( 100% + 37px)"; 
+        min-width: 42px;
+        height: 42px;
+        background-color: #3E5FD2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: 100;
+      }
+    }
+  }
+  
+  .list {
+    max-width: 590px;
+    margin: auto;
+    margin-top: 50px;
+  }
+  .btn.unfollow {
+    margin-left: auto;
+    border-radius: 4px;
+    padding: 9px 14px;
+    background-color: #3E5FD2;
+    color: #fff;
+    cursor: pointer;
+  }

@@ -1,0 +1,53 @@
+extends ./layouts/main.pug
+block body
+	body#following
+		include partials/header.pug
+		.fluid-container
+			.list
+				.headers
+					.imp Importance
+					.count
+						| Following 
+						span.num 245
+					input.search(type="text", placeholder="Search")
+				.persons
+					.person
+						.importance_num 1
+						a.imgLink(href="/profile/abdozo")
+							img.avatar(src="https://randomuser.me/api/portraits/men/67.jpg")
+						a.info(href="/profile/abdozo")
+							.name
+								span.first Abdozo
+								span  
+								span.last Zokara
+							.followers
+								span.num 94355
+								span  
+								| followers
+						.btn.unfollow unfollow
+					.person
+						.importance_num 2
+						img.avatar(src="https://randomuser.me/api/portraits/men/67.jpg")
+						a.info(href="/profile/abdozo")
+							.name
+								span.first Abdozo
+								span  
+								span.last Zokara
+							.followers
+								span.num 94355
+								span  
+								| followers
+						.btn.unfollow unfollow
+					.person
+						.importance_num 3
+						img.avatar(src="https://randomuser.me/api/portraits/men/67.jpg")
+						a.info(href="/profile/abdozo")
+							.name
+								span.first Abdozo
+								span  
+								span.last Zokara
+							.followers
+								span.num 94355
+								span  
+								| followers
+						.btn.unfollow unfollow
