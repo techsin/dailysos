@@ -44,3 +44,7 @@ host all postgres 127.0.0.1/32 trust
 
 pg_ctl -D \psql_data start
 createdb -h localhost -U techsin dailysos
+
+
+mac
+psql -d dailysos

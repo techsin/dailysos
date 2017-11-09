@@ -12,11 +12,20 @@ app.use(express.static(path.join(__dirname, "public")));
 app.disable("x-powered-by");
 app.use(logger("dev"));
 // app.use(require("cookie-parser"));
+const models = require("./backend/db/models");
 
 //need to add postgresql for sessions
 const session = require("express-session");
+var SequelizeStore = require('connect-session-sequelize')(session.Store);
+var sessionStore = new SequelizeStore({
+	db: models.sequelize,
+	checkExpirationInterval: 15 * 60 * 1000,
+	expiration: 7 * 24 * 60 * 60 * 1000
+ });
+
 app.use(
 	session({
+		store: sessionStore,
 		secret: "ifsdnoiv39noin3930808fg809sd8gfhn8nnc9jie0",
 		resave: false,
 		saveUninitialized: true
@@ -65,7 +74,6 @@ app.use(function(err, req, res, next) {
 });
 
 // load Models
-const models = require("./backend/db/models");
 models.sequelize.sync().then(() => {
 	app.listen(PORT, () => {
 		console.log(`Server is up and running on port ${PORT}`);

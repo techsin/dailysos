@@ -9,15 +9,13 @@ function passwordsMatch(passwordSubmitted, storedPassword) {
 }
 
 passport.use(new LocalStrategy({
-    usernameField: 'email',
-  },
+  usernameField: 'email',
+},
   (email, password, done) => {
     Users.findOne({
       where: { email },
     }).then((user) => {
-      debugger;
-
-      if(!user) {
+      if (!user) {
         return done(null, false, { message: 'Incorrect email.' });
       }
 
@@ -50,6 +48,10 @@ passport.redirectIfLoggedIn = (route) =>
   (req, res, next) => (req.user ? res.redirect(route) : next());
 
 passport.redirectIfNotLoggedIn = (route) =>
-  (req, res, next) => (req.user ? next() : res.redirect(route));
+  (req, res, next) => {
+    res.header('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
+    res.header('Expires', 'Fri, 31 Dec 1998 12:00:00 GMT');
+    (req.user ? next() : res.redirect(route));
+  }
 
 module.exports = passport;

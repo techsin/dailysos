@@ -5,8 +5,15 @@ const path = require('path');
 const router = express.Router();
 const basename = path.basename(module.filename);
 
-router.get('/', (req, res) => {
+const auth = require('../middlewares/auth');
+
+router.get('/', auth.redirectIfLoggedIn('/timeline'), (req, res) => {
   res.render('home');
+});
+
+router.use(function(req,res,next){
+  if (req.user) res.locals.user = req.user;
+  next();
 });
 
 fs
