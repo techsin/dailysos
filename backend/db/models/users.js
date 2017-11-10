@@ -19,9 +19,6 @@ module.exports = (sequelize, DataTypes) => {
     }
   });
 
-
-  Users.hasMany(Upvotes);
-
   Users.beforeCreate((user) =>
     new sequelize.Promise((resolve) => {
       bcrypt.hash(user.password, null, null, (err, hashedPassword) => {
