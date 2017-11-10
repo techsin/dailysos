@@ -1,4 +1,4 @@
-const Post = require("./posts.js");
+const Post = require("./posts");
 
 module.exports = (sequelize, DataTypes) => {
   var Links = sequelize.define('Links', {
