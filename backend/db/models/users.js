@@ -1,6 +1,7 @@
 'use strict';
 
 const bcrypt = require('bcrypt-nodejs');
+const Upvotes = require('./upvotes');
 
 module.exports = (sequelize, DataTypes) => {
   var Users = sequelize.define('Users', {
@@ -17,6 +18,9 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   });
+
+
+  Users.hasMany(Upvotes);
 
   Users.beforeCreate((user) =>
     new sequelize.Promise((resolve) => {

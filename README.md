@@ -48,3 +48,8 @@ createdb -h localhost -U techsin dailysos
 
 mac
 psql -d dailysos
+
+
+createuser -P -s -e techsin
+
+createdb -h localhost -U techsin dailysos`
