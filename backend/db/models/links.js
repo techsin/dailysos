@@ -5,6 +5,5 @@ module.exports = (sequelize, DataTypes) => {
     global_upvotes: {type: DataTypes.INTEGER, defaultValue: 1},
     url: DataTypes.TEXT
   })
-  Links.hasMany(Post);
   return Links;
 };
