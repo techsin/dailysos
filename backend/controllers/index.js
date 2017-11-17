@@ -12,7 +12,7 @@ router.get('/', auth.redirectIfLoggedIn('/timeline'), (req, res) => {
 });
 
 router.use(function(req,res,next){
-  if (req.user) res.locals.random = req.user;
+  if (req.user) res.locals.user = req.user;
   next();
 });
 
@@ -27,8 +27,5 @@ fs
 
 
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 0322522363ee9fc5eb47c06d1d5331a5f7810d4f
 module.exports = router;
