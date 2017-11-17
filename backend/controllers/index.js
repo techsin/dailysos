@@ -7,10 +7,6 @@ const basename = path.basename(module.filename);
 
 const auth = require('../middlewares/auth');
 
-db = require('../db/models');
-debugger;
-
-
 router.get('/', auth.redirectIfLoggedIn('/timeline'), (req, res) => {
   res.render('home');
 });
@@ -31,5 +27,8 @@ fs
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0322522363ee9fc5eb47c06d1d5331a5f7810d4f
 module.exports = router;
