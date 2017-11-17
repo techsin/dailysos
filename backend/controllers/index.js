@@ -16,7 +16,7 @@ router.get('/', auth.redirectIfLoggedIn('/timeline'), (req, res) => {
 });
 
 router.use(function(req,res,next){
-  if (req.user) res.locals.user = req.user;
+  if (req.user) res.locals.random = req.user;
   next();
 });
 
