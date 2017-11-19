@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node app.js",
+    "devstart": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -32,7 +33,7 @@
     "morgan": "^1.9.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "pg": "6.4.2",
+    "pg": "^6.4.2",
     "pg-hstore": "^2.3.2",
     "pug": "^2.0.0-rc.4",
     "react": "^16.0.0",
@@ -40,7 +41,7 @@
     "react-ga": "^2.3.5",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
-    "sequelize": "^4.13.9",
+    "sequelize": "^4.22.5",
     "serve-favicon": "^2.4.5"
   },
   "devDependencies": {
