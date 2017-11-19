@@ -4,3 +4,5 @@ npm-debug.log
 .DS_Store
 Dockerfile
 docker-compose.yml
+backend/db/config/config.json
+config/keys.js
