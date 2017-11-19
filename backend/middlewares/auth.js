@@ -1,7 +1,9 @@
 const bcrypt = require('bcrypt-nodejs');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
+const GoogleStrategy = require('passport-google-oauth20');
 
+const keys = require('../../config/keys');
 const Users = require('../db/models').Users;
 
 function passwordsMatch(passwordSubmitted, storedPassword) {
@@ -27,6 +29,16 @@ passport.use(new LocalStrategy({
       console.log('\n\ncorrect login!!\n\n')
       return done(null, user, { message: 'Successfully Logged In!' });
     });
+  })
+);
+
+passport.use(
+  new GoogleStrategy({
+    clientID: keys.google.clientID,
+    clientSecret: keys.google.clientSecret,
+    callbackURL: 'login/google/redirect'
+  }, () => {
+    // passport callback function
   })
 );
 
