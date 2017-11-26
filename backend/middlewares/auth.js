@@ -36,9 +36,11 @@ passport.use(
   new GoogleStrategy({
     clientID: keys.google.clientID,
     clientSecret: keys.google.clientSecret,
-    callbackURL: 'login/google/redirect'
-  }, () => {
+    callbackURL: '/login/google/redirect'
+  }, (accessToken, refreshToken, profile, done) => {
     // passport callback function
+    console.log('passport callback function fired.')
+    console.log(profile);
   })
 );
 

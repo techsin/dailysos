@@ -13,13 +13,12 @@ router.post('/', function (req, res) {
     })(req, res);
 });
 
-router.get('/google', passport.authenticate('google', {
-  scope: ['profile']
-}));
+router.get('/google', passport.authenticate('google', { scope: ['profile'] })
+);
 
 // Callback route for Google OAuth
-router.get('/google/redirect', function (req, res) {
-  res.send('Callback route for Google OAuth')
+router.get('/google/redirect', passport.authenticate('google'), function (req, res) {
+  res.send('Callback route for Google OAuth');
 });
 
 module.exports = router;
