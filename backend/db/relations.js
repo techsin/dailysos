@@ -1,14 +1,15 @@
-const db = require('./models');
-const Posts = require(db.Posts);
-const Links = require(db.Links);
-const Upvotes = require(db.Upvotes);
-const Users = require(db.Users);
+module.exports = (db) => {
+  const Posts = db.Posts;
+  const Links = db.Links;
+  const Upvotes = db.Upvotes;
+  const Users = db.Users;
 
-  Links.hasMany(Post);
-  Posts.belongsTo(Link);
-  Posts.belongsTo(User);
-  Posts.hasMany(Upvote);
-  Upvotes.belongsTo(User);
-  Upvotes.belongsTo(Post);
+  Links.hasMany(Posts);
+  Posts.belongsTo(Links);
+  Posts.belongsTo(Users);
+  Posts.hasMany(Upvotes);
+  Upvotes.belongsTo(Users);
+  Upvotes.belongsTo(Posts);
   Users.hasMany(Upvotes);
-  
+  Users.hasMany(Posts);
+};

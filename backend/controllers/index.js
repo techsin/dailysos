@@ -7,10 +7,6 @@ const basename = path.basename(module.filename);
 
 const auth = require('../middlewares/auth');
 
-db = require('../db/models');
-debugger;
-
-
 router.get('/', auth.redirectIfLoggedIn('/timeline'), (req, res) => {
   res.render('home');
 });

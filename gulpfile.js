@@ -26,7 +26,8 @@ gulp.task("serve", ["nodemon", "less"], function() {
 				stats: { colors: true }
 			}),
 			webpackHotMiddleware(bundler)
-		]
+		],
+		browser: "google chrome"
 	});
 
 	gulp.watch("frontend/styles/**/*.less", ["less"]);
