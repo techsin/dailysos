@@ -25,7 +25,4 @@ fs
     router.use(`/${fileName}`, require(`./${fileName}`));
   });
 
-
-
-
 module.exports = router;
