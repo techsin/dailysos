@@ -38,9 +38,8 @@ passport.use(
     clientSecret: keys.google.clientSecret,
     callbackURL: '/login/google/redirect'
   }, (accessToken, refreshToken, profile, done) => {
-    // passport callback function
-    console.log('passport callback function fired.')
-    console.log(profile);
+    /* passport callback function */
+    // check if user exists in database. if not create record for new user
   })
 );
 
