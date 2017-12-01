@@ -3,95 +3,22 @@ block body
     body#timeline
         include partials/header.pug
         .container
-            form.post_box
-                textarea(name="", id="", cols="30", rows="10")
+            form.post_box(action="/links" method="post")
+                textarea(name="links", id="", cols="30", rows="10")
                 input.post_btn.blue_btn(type="submit", value="Post")
             .links_sect
                 .headline
                     .txt Today
                     .line
                 .links
-                    a.link(href="/links/33838")
-                        .total_score 2590
-                        .title
-                            span.txt How to cook chicken soup
-                            |  | 
-                            span.url https://wikihow.com/how-to-cook-chicken-soup…
-                        .reach
-                            span.num 30
-                            | % Reach
-                        .score 58
-                    a.link(href="/links/33838")
-                        .total_score 2590
-                        .title
-                            span.txt How to cook chicken soup
-                            |  | 
-                            span.url https://wikihow.com/how-to-cook-chicken-soup…
-                        .reach
-                            span.num 30
-                            | % Reach
-                        .score 58
-                    a.link(href="/links/33838")
-                        .total_score 2590
-                        .title
-                            span.txt How to cook chicken soup
-                            |  | 
-                            span.url https://wikihow.com/how-to-cook-chicken-soup…
-                        .reach
-                            span.num 30
-                            | % Reach
-                        .score 58
-                    a.link(href="/links/33838")
-                        .total_score 2590
-                        .title
-                            span.txt How to cook chicken soup
-                            |  | 
-                            span.url https://wikihow.com/how-to-cook-chicken-soup…
-                        .reach
-                            span.num 30
-                            | % Reach
-                        .score 58
-                .headline
-                    .txt October 13
-                    .line
-                .links
-                    a.link(href="/links/33838")
-                        .total_score 2590
-                        .title
-                            span.txt How to cook chicken soup
-                            |  | 
-                            span.url https://wikihow.com/how-to-cook-chicken-soup…
-                        .reach
-                            span.num 30
-                            | % Reach
-                        .score 58
-                    a.link(href="/links/33838")
-                        .total_score 2590
-                        .title
-                            span.txt How to cook chicken soup
-                            |  | 
-                            span.url https://wikihow.com/how-to-cook-chicken-soup…
-                        .reach
-                            span.num 30
-                            | % Reach
-                        .score 58
-                    a.link(href="/links/33838")
-                        .total_score 2590
-                        .title
-                            span.txt How to cook chicken soup
-                            |  | 
-                            span.url https://wikihow.com/how-to-cook-chicken-soup…
-                        .reach
-                            span.num 30
-                            | % Reach
-                        .score 58
-                    a.link(href="/links/33838")
-                        .total_score 2590
-                        .title
-                            span.txt How to cook chicken soup
-                            |  | 
-                            span.url https://wikihow.com/how-to-cook-chicken-soup…
-                        .reach
-                            span.num 30
-                            | % Reach
-                        .score 58
+                    each post in posts
+                        a.link(href="#{post.link.url}")
+                            .total_score= post.link.global_upvotes
+                            .title
+                                span.txt How to cook chicken soup
+                                |  | 
+                                span.url= post.link.url
+                            .reach
+                                span.num 38
+                                | % Reach
+                            .score= post.upvotes.length || 1
