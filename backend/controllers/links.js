@@ -6,7 +6,7 @@ const models = require('../db/models');
 const Posts = models.Posts;
 const Links = models.Links;
 const getUrls = require('get-urls');
-
+const axios = require('axios');
 
 router.get('/:id', function (req, res) {
     res.render('link_view');
@@ -19,7 +19,8 @@ router.post('/', async function (req, res) {
     for (let url of urls) {
         let link = await Links.findOne({ where: { url } });
         if (link === null) {
-            link = await Links.create({ url });
+            let title = await getTitle(url);
+            link = await Links.create({ url, title});
         }
         allLinks.push(link);
     }
@@ -33,3 +34,15 @@ router.post('/', async function (req, res) {
 });
 
 module.exports = router;
+
+async function getTitle(url) {
+    let res;
+    try {
+        res = await axios.get(url)
+    } catch (error) {
+        console.log('error', error);
+        return null;
+    }
+    let title = res.data.match(/<title>(.*?)<\/title>/)[1];
+    return title;
+}

@@ -7,18 +7,18 @@ block body
                 textarea(name="links", id="", cols="30", rows="10")
                 input.post_btn.blue_btn(type="submit", value="Post")
             .links_sect
-                .headline
-                    .txt Today
-                    .line
-                .links
-                    each post in posts
-                        a.link(href="#{post.link.url}")
-                            .total_score= post.link.global_upvotes
-                            .title
-                                span.txt How to cook chicken soup
-                                |  | 
-                                span.url= post.link.url
-                            .reach
-                                span.num 38
-                                | % Reach
-                            .score= post.upvotes.length || 1
+                each posts, date in posts_data
+                        .headline
+                            .txt= date
+                            .line
+                        each post in posts
+                            .links
+                                a.link(href=post.link.url)
+                                    .total_score= post.link.global_upvotes
+                                    .title
+                                        span.txt= post.link.title
+                                        span.url= post.link.url
+                                    .reach
+                                        span.num 38
+                                        | % Reach
+                                    .score= post.upvotes.length || 1
