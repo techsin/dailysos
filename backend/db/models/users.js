@@ -8,6 +8,7 @@ module.exports = (sequelize, DataTypes) => {
     lastName: DataTypes.STRING,
     email: DataTypes.STRING,
     password: DataTypes.STRING,
+    googleID: DataTypes.STRING,
     about: DataTypes.STRING,
     karma: {type: DataTypes.INTEGER, defaultValue: 10}
   }, {

@@ -38,9 +38,25 @@ passport.use(
     clientSecret: keys.google.clientSecret,
     callbackURL: '/login/google/redirect'
   }, (accessToken, refreshToken, profile, done) => {
-    /* passport callback function */
-    // check if user exists in database. if not create record for new user
-  })
+     // check if user exists in database. if not create record for new user
+     Users.findOne({
+       where: {googleID: profile.id}
+     }).then((user) => {
+       if(user) {
+         // user already exists
+         console.log('User already exists');
+       }
+       else {
+         Users.create({
+           firstName: profile.name.givenName,
+           lastName: profile.name.familyName,
+           googleID: profile.id
+         }).then((user) => {
+              console.log('New user created');
+         })
+       }
+     })
+   })
 );
 
 passport.serializeUser((user, done) => {
