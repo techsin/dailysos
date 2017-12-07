@@ -38,13 +38,13 @@ passport.use(
     clientSecret: keys.google.clientSecret,
     callbackURL: '/login/google/redirect'
   }, (accessToken, refreshToken, profile, done) => {
-     // check if user exists in database. if not create record for new user
-     Users.findOne({
+      console.log('passport callback function fired!');
+      Users.findOne({
        where: {googleID: profile.id}
      }).then((user) => {
        if(user) {
-         // user already exists
          console.log('User already exists');
+         done(null, user);
        }
        else {
          Users.create({
@@ -53,6 +53,7 @@ passport.use(
            googleID: profile.id
          }).then((user) => {
               console.log('New user created');
+              done(null, user);
          })
        }
      })
@@ -68,7 +69,6 @@ passport.deserializeUser((id, done) => {
     if (!user) {
       return done(null, false);
     }
-
     return done(null, user);
   });
 });

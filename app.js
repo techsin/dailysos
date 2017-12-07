@@ -4,6 +4,8 @@ const PORT = process.env.PORT || 3000;
 const inProduction = process.env.NODE_ENV === "production";
 const app = express();
 
+const keys = require('./config/keys.js')
+const cookieSession = require('cookie-session');
 const bodyParser = require("body-parser");
 const logger = require("morgan");
 app.use(bodyParser.json());
@@ -12,6 +14,11 @@ app.use(express.static(path.join(__dirname, "public")));
 app.disable("x-powered-by");
 app.use(logger("dev"));
 // app.use(require("cookie-parser"));
+app.use(cookieSession({
+		maxAge: 24 * 60 * 60 * 1000,
+		keys: [keys.session.cookieKey]
+	})
+);
 const models = require("./backend/db/models");
 
 //need to add postgresql for sessions
